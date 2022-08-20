@@ -1,0 +1,150 @@
+<html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+             
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+  <script>
+    const start=new Map();
+    start.set("CAT","AUG 3, 2022");
+    start.set("XAT","August 10, 2022 ( 12 Noon Onwards)");
+    start.set("NMAT","August 1, 2022");
+    start.set("SNAP","");
+    start.set("TISS","");
+    start.set("MICAT","");
+    start.set("SRCC GBO","");
+    start.set("IIFT","");
+    start.set("LRMA","");
+    start.set("MAT","");
+    start.set("CET","");
+    start.set("CMAT","");
+    const end=new Map();
+    end.set("CAT","SEP 14, 2022");
+    end.set("XAT","November 30, 2022 (Till 12 midnight)");
+    end.set("NMAT","October 10, 2022");
+    end.set("SNAP","");
+    end.set("TISS","");
+    end.set("MICAT","");
+    end.set("SRCC GBO","");
+    end.set("IIFT","");
+    end.set("LRMA","");
+    end.set("MAT","");
+    end.set("CET","");
+    end.set("CMAT","");
+
+    const exam=new Map();
+    exam.set("CAT","CAT 2022 Test Day: NOV 27, 2022, Sunday");
+    exam.set("XAT","January 8, 2023");
+    exam.set("NMAT","October 10, 2022");
+    exam.set("SNAP","");
+    exam.set("TISS","");
+    exam.set("MICAT","");
+    exam.set("SRCC GBO","");
+    exam.set("IIFT","");
+    exam.set("LRMA","");
+    exam.set("MAT","");
+    exam.set("CET","");
+    exam.set("CMAT","");
+    const fees=new Map();
+    fees.set("CAT","Rs. 2300/ - General");
+    fees.set("XAT","Rs. 2000/ - General");
+    fees.set("NMAT","Rs.2800/- General");
+    fees.set("SNAP","");
+    fees.set("TISS","");
+    fees.set("MICAT","");
+    fees.set("SRCC GBO","");
+    fees.set("IIFT","INR 2,500 (General category)");
+    fees.set("LRMA","");
+    fees.set("MAT","");
+    fees.set("CET","");
+    fees.set("CMAT","");
+
+
+
+    
+    function check(){
+      
+      console.log("inse");
+var x=document.getElementById("opt").value;
+document.getElementById("heading").innerHTML=x;
+document.getElementById("det").style.visibility="visible";
+
+document.getElementById("start").innerHTML=start.get(x);
+document.getElementById("end").innerHTML=end.get(x);;
+document.getElementById("fee").innerHTML=fees.get(x);;
+document.getElementById("edate").innerHTML=exam.get(x);;
+  
+
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+  </script>
+    <body>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+        <div class="input-field col s12">
+            <select id="opt">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="CAT">CAT</option>
+              <option value="XAT">XAT</option>
+              <option value="IIFT">IIFT</option>
+              <option value="NMAT">NMAT</option>
+              <option value="SNAP">SNAP</option>
+              <option value="TISS">TISS</option>
+              <option value="MICAT">MICAT</option>
+              <option value="SRCC GBO">SRCC GBO</option>
+              <option value="LRMA">LRMA</option>
+              <option value="MAT">MAT</option>
+              <option value="CET">CET</option>
+              <option value="CMAT">CMAT</option>
+            
+            </select>
+            <label> Select Exam</label>
+          </div>
+          </div>
+              <div class="row">
+        <a class="waves-effect waves-light btn-small" onclick="check()">Check</a>
+
+        <div class="col s12 m7" style="visibility: hidden;" id="det">
+            <h2 class="header" id="heading"></h2>
+            <div class="card horizontal">
+              <div class="card-image">
+                <img src="https://lorempixel.com/100/190/nature/6">
+              </div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <p><strong>> Registration Starts:</strong><span id="start"></span></p>
+                  <p><strong>> Registration Ends:</strong><span id="end"></span></p>
+                  <p><strong>> Registration Fee:</strong><span id="fee"></span></p>
+                  <p><strong>> Exam Date:</strong><span id="edate"></span></p>
+                  
+                  
+                  <p id ="content"></p>
+                </div>
+                <div class="card-action">
+                  <a href="#"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+</form>
+      <!--JavaScript at end of body for optimized loading-->
+      
+    </body>
+  </html>
+        
